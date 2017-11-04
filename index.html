@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jim Kollevik | Hacking Google Spreadsheet</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- default css -->
+	<link rel="stylesheet" type="text/css" href="assetts/css/default.css">
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Bitter|Roboto+Condensed" rel="stylesheet">
+	<!-- scripts jquery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+</div><!-- end container -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		//https://spreadsheets.google.com/feeds/list/1RtrMfImWlOm40LEvSR-tzY83nI98bh8uqCnHiGcFvz0/od6/public/values?alt=json-in-script
+		var uri = "https://spreadsheets.google.com/feeds/list/1RtrMfImWlOm40LEvSR-tzY83nI98bh8uqCnHiGcFvz0/od6/public/values?alt=json-in-script&callback=?";
+			$.getJSON(uri, function(data) {
+				for(var i = 0; i < 1; i++) {
+					var header = data.feed.entry[i].gsx$header.$t;
+					var intro = data.feed.entry[i].gsx$intro.$t;
+					var header_two = data.feed.entry[i].gsx$headertwo.$t;
+					var paragraph_one = data.feed.entry[i].gsx$paragraphone.$t;
+					var header_three = data.feed.entry[i].gsx$headerthree.$t;
+					var paragraph_two = data.feed.entry[i].gsx$paragraphtwo.$t;
+					var header_four = data.feed.entry[i].gsx$headerfour.$t;
+					var paragraph_three = data.feed.entry[i].gsx$paragraphthree.$t;
+					var header_five = data.feed.entry[i].gsx$headerfive.$t;
+					var paragraph_four = data.feed.entry[i].gsx$paragraphfour.$t;
+					var image = data.feed.entry[i].gsx$image.$t;
+					var author = data.feed.entry[i].gsx$author.$t;
+					var date = data.feed.entry[i].gsx$date.$t;
+					$(".container").append("<h1>" + header + "</h1><p>" + intro +"</p><h2>" + header_two + "</h2><p>" + paragraph_one + "</p><h2>" + header_three + "</h2><p>" + paragraph_two + "</p><h2>" + header_four + "</h2><p>" + paragraph_three + "</p><h2>" + header_five + "</h2><p>" + paragraph_four + "</p>")
+					//console.log(header, intro, header_two, brodtext, author, date)
+				}
+			})
+	});//end script
+</script>
+
+</body>
+</html>

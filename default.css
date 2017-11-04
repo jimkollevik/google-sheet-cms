@@ -1,0 +1,23 @@
+/*
+Author: Jim Kollevik;
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	background-color: #fff;
+	width: 70%;
+	margin: 3% auto;
+}
+h1, h2, h3, h4 {
+	margin-bottom: 15px;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+p {
+	margin-bottom: 50px;
+	font-family: 'Bitter', serif;
+}
+.author {
+	margin-bottom: 10px !important;
+}
