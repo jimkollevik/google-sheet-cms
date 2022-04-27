@@ -1,2 +1,2 @@
-# googleSpreadsheetHack
-Create your own backend system using Google Spreadsheet
+# google sheet cms
+create a cms using google spreadsheet
